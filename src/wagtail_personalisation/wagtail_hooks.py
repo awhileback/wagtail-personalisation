@@ -235,7 +235,7 @@ class SegmentSummaryPanel(SummaryItem):
         title = _("Segments")
         return mark_safe(
             """
-            <li class="icon group">
+            <li class="icon icon-group">
                 <a href="{}"><span>{}</span>{}</a>
             </li>""".format(
                 target_url, segment_count, title
@@ -253,7 +253,7 @@ class PersonalisedPagesSummaryPanel(PagesSummaryItem):
         title = _("Personalised Page")
         return mark_safe(
             """
-            <li class="icon doc-empty">
+            <li class="icon icon-doc-empty">
                 <span>{}</span>{}{}
             </li>""".format(
                 page_count, title, pluralize(page_count)
@@ -271,7 +271,7 @@ class VariantPagesSummaryPanel(PagesSummaryItem):
         title = _("Variant")
         return mark_safe(
             """
-                <li class="icon doc-full">
+                <li class="icon icon-doc-full">
                     <span>{}</span>{}{}
                 </li>""".format(
                 page_count, title, pluralize(page_count)
