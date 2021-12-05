@@ -192,12 +192,12 @@ def page_listing_more_buttons(page, page_perms, is_parent=False, *args):
 
 
 class CorrectedPagesSummaryItem(PagesSummaryItem):
-    def get_context(self):
+    def get_context_data(self, parent_context):
         # Perform the same check as Wagtail to get the correct count.
         # Only correct the count when a root page is available to the user.
         # The `PagesSummaryItem` will return a page count of 0 otherwise.
         # https://github.com/wagtail/wagtail/blob/5c9ff23e229acabad406c42c4e13cbaea32e6c15/wagtail/admin/site_summary.py#L38
-        context = super().get_context()
+        context = super().get_context_data(parent_context)
         root_page = context.get("root_page", None)
         if root_page:
             pages = utils.exclude_variants(
